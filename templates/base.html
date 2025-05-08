@@ -1,6 +1,9 @@
 {% load static %}
 
 {% url "home" as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -53,8 +56,8 @@
         <a class="navbar-brand" href="{% url 'homepage' %}"
           ><img
             class="logo"
-            src="{% static 'images/logo.png' %}"
-            alt="pizz-hemma-logo"></a>
+            src="{% static 'images/logo.jpg' %}"
+            alt="ophelia-logo"></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -125,3 +128,16 @@
     ></script>
 
   </body>
+  {% if user.is_authenticated %}
+  <li class="nav-item">
+      <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+  </li>
+  {% else %}
+  <li class="nav-item">
+      <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+          href="{% url 'account_signup' %}">Register</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+  </li>
+  {% endif %}
