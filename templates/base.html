@@ -58,7 +58,7 @@
             ><i class="fa-solid fa-bars"></i
           ></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ms-auto py-3 px-5">
           <ul class="navbar-nav ms-auto py-3 px-5">
             <li class="nav-item">
               <a class="nav-link" href="">About us</a>
@@ -67,26 +67,13 @@
               <a class="nav-link" aria-current="" href="">Menu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="" href="">Member Club</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" aria-current="" href="">Reviews</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="" href="">Contact</a>
             </li>
-            {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" aria-current="" href="">
-                <i class="fa-solid fa-circle-user"></i> Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" aria-current="" href=""></a>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-              <a class="btn-order" aria-current="" href="">ORDER HERE</a>
+              <a class="nav-link" aria-current="" href="">Bookings</a>
             </li>
           </ul>
         </div>
